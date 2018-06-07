@@ -68,17 +68,14 @@ class App extends Component {
   }
 }
 
-function Search({value, onChange, children}) {
-  return (
-    <form>
-      {children} <input
-        type="text"
-        value={value}
-        onChange={onChange}
-      />
-    </form>
-  );
-}
+const Search = ({value, onChange, children}) =>
+  <form>
+    {children} <input
+      type="text"
+      value={value}
+      onChange={onChange}
+    />
+  </form>
 
 class Table extends Component {
   render() {
@@ -105,23 +102,19 @@ class Table extends Component {
   }
 }
 
-class Button extends Component {
-  render() {
-    const {
-      onClick,
-      className = '',
-      children,
-    } = this.props;
+const Button = ({onClick, className = '', children}) =>
 
-    return (
-      <button
-        onClick={onClick}
-        className={className}
-        type="button"
-      >
-        {children}
-      </button>
-    );
-  }
-}
+  // const {
+  //   onClick,
+  //   className = '',
+  //   children,
+  // } = props;
+  <button
+    onClick={onClick}
+    className={className}
+    type="button"
+  >
+    {children}
+  </button>
+
 export default App;
